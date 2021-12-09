@@ -1,12 +1,12 @@
-
-
-
 <!DOCTYPE html>
 <html lang="es">
-
-<head>
-    <meta charset="UTF-8" /><meta http-equiv="X-UA-Compatible" content="IE=Edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no" />
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0, user-scalable=no"
+    />
     <meta name="format-detection" content="telephone=no" />
     <meta name="apple-mobile-web-app-capable" content="yes" />
     <meta name="apple-mobile-web-app-status-bar-style" content="black" />
@@ -16,544 +16,1475 @@
     <script type="text/javascript" src="/JS/jquery-ui.min.js"></script>
     <script type="text/javascript" src="/JS/colResizable-1.7x.js"></script>
 
-    <script src='https://apis.google.com/js/platform.js' async defer></script>
+    <script src="https://apis.google.com/js/platform.js" async defer></script>
 
-    
-        <script type='text/javascript' src='/JS/V3.js'></script>
-    
-    <link rel='stylesheet' media='screen' href='/CSS/V3.css' />
-    
-    <link rel='stylesheet' media='print' href='/CSS/Print.css' />
-    
-    <meta property='og:description' content='El software de ERP mas avanzado y flexible del mercado Argentino para empresas, estudios contables, puntos de venta y factura electronica en general.'/>
-    <meta property='og:type' content='website'/>
-    
-    <meta name='google-signin-client_id' content='28792254574-9aluclk2u9l03fchf4j6l2nickjd0n45.apps.googleusercontent.com'>
-    
-    <script src='https://www.googletagmanager.com/gtag/js?id=UA-24622924-5' async></script>
-    
+    <script type="text/javascript" src="/JS/V3.js"></script>
+
+    <link rel="stylesheet" media="screen" href="/CSS/V3.css" />
+
+    <link rel="stylesheet" media="print" href="/CSS/Print.css" />
+
+    <meta
+      property="og:description"
+      content="El software de ERP mas avanzado y flexible del mercado Argentino para empresas, estudios contables, puntos de venta y factura electronica en general."
+    />
+    <meta property="og:type" content="website" />
+
+    <meta
+      name="google-signin-client_id"
+      content="28792254574-9aluclk2u9l03fchf4j6l2nickjd0n45.apps.googleusercontent.com"
+    />
+
+    <script
+      src="https://www.googletagmanager.com/gtag/js?id=UA-24622924-5"
+      async
+    ></script>
+
     <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag() { dataLayer.push(arguments); }
-    gtag('js', new Date());
-    
-    gtag('config', 'UA-24622924-5');
-    
-    var HeartBeatMinutes = 0;
-    var HeartBeatInterval = setInterval(function() {
-    HeartBeatMinutes += 4.5;
-    gtag('event', 'beat', {
-       'event_category': 'Heartbeat',
-       'event_label': HeartBeatMinutes.toString() + 'm'
-    });
-  }, 1000 * 60 * 4.5);
+      window.dataLayer = window.dataLayer || [];
+      function gtag() {
+        dataLayer.push(arguments);
+      }
+      gtag("js", new Date());
+
+      gtag("config", "UA-24622924-5");
+
+      var HeartBeatMinutes = 0;
+      var HeartBeatInterval = setInterval(function () {
+        HeartBeatMinutes += 4.5;
+        gtag("event", "beat", {
+          event_category: "Heartbeat",
+          event_label: HeartBeatMinutes.toString() + "m",
+        });
+      }, 1000 * 60 * 4.5);
     </script>
-    
-    <link rel='stylesheet' media='screen' href='/CSS/ADDPark.css' />
-    <script type='text/javascript' src='/JS/ADDPark.js?v29382'></script>
-    <script type='text/javascript' src='/JS/Fiscal.js?v29382'></script>
-<title>
-	ADDPark /cloud
-</title>
-<meta name="description" content="El software de ERP mas avanzado y flexible del mercado Argentino para empresas, estudios contables, puntos de venta y factura electronica en general." /><meta name="keywords" content="K7, Factura electronica, Buenos Aires, Argentina, RG2784, software de gestion, software contable, software administrativo, software erp, sistema contable, sistema de gestion, sistema de parking" />
-</head>
 
-<body id="body" onclick="ClosePanels();" onkeyup="BodyKeyUp();">
+    <link rel="stylesheet" media="screen" href="/CSS/ADDPark.css" />
+    <script type="text/javascript" src="/JS/ADDPark.js?v29382"></script>
+    <script type="text/javascript" src="/JS/Fiscal.js?v29382"></script>
+    <title>ADDPark /cloud</title>
+    <meta
+      name="description"
+      content="El software de ERP mas avanzado y flexible del mercado Argentino para empresas, estudios contables, puntos de venta y factura electronica en general."
+    />
+    <meta
+      name="keywords"
+      content="K7, Factura electronica, Buenos Aires, Argentina, RG2784, software de gestion, software contable, software administrativo, software erp, sistema contable, sistema de gestion, sistema de parking"
+    />
+  </head>
 
+  <body id="body" onclick="ClosePanels();" onkeyup="BodyKeyUp();">
     <section id="HeadSection">
+      <button id="appMenu" onclick="ShowMenu()" ondblclick="GoToMenu()">
+        <svg viewBox="0 0 24 24">
+          <path d="M24 5H0V1h24v4zm0 5H0v4h24v-4zm0 9H0v4h24v-4z"></path>
+        </svg>
+      </button>
 
-        <button id='appMenu' onclick="ShowMenu()" ondblclick="GoToMenu()">
-            <svg viewBox="0 0 24 24">
-                <path d="M24 5H0V1h24v4zm0 5H0v4h24v-4zm0 9H0v4h24v-4z"></path>
-            </svg>
-        </button>
+      <div id="appMenuDropDown">
+        <div id="recentMenu"></div>
 
-        <div id="appMenuDropDown">
-            <div id="recentMenu"></div>
+        <div id="menuSearch">
+          <div
+            class="menuItem"
+            id="fullMenuItem"
+            onmouseenter="showFilterMenu()"
+          >
+            <input
+              id="filterMenu"
+              type="search"
+              placeholder="buscar en menu"
+              autocomplete="off"
+              onclick="event.stopPropagation();"
+              onchange="doFilterMenu(1);"
+              onkeypress="return disablePostBackInMenu(1);"
+              oninput="doFilterMenu(1);"
+            />
+            <p id="filterMenuIndicator">&#9658;</p>
+          </div>
 
-            <div id="menuSearch">
-                <div class='menuItem' id="fullMenuItem" onmouseenter="showFilterMenu()">
-                    <input id='filterMenu' type='search' placeholder='buscar en menu' autocomplete="off" onclick="event.stopPropagation();"
-                        onchange="doFilterMenu(1);" onkeypress="return disablePostBackInMenu(1);" oninput="doFilterMenu(1);" />
-                    <p id="filterMenuIndicator">&#9658;</p>
-                </div>
-
-                <div class='menuSeparator'></div>
-            </div>
-
-            <div id="classicMenu">
-                <img src="/Images/loading_transparent.gif" />
-            </div>
-
-            <div class='menuItem' id='appHelp' onmouseenter='hideSMd()' onclick='showHelp2()'>
-                <label>Ayuda</label>
-            </div>
-
-            <div class='menuSeparator'></div>
-
-            <span id="commMenu" onmouseenter="hideSMd()">
-                <a href="https://addsa.com.ar/" target="_blank"
-                    onclick="PageMethods.LogEvent3p('MENU', 'SOCIAL', 'ADDSA', afterLog, onFailure);">
-                    <img src="/Images/Comm/add.png" title="ADD S.A.">
-                </a>
-                <a href="https://www.facebook.com/add.soluciones/" target="_blank"
-                    onclick="PageMethods.LogEvent3p('MENU', 'SOCIAL', 'Facebook', afterLog, onFailure);">
-                    <img src="/Images/Comm/facebook.png" title="Facebook">
-                </a>
-                <a href="https://www.instagram.com/add.soluciones/" target="_blank"
-                    onclick="PageMethods.LogEvent3p('MENU', 'SOCIAL', 'Instagram', afterLog, onFailure);">
-                    <img src="/Images/Comm/instagram.png" title="Instagram">
-                </a>
-                <a href="https://www.linkedin.com/company/add-sa/" target="_blank"
-                    onclick="PageMethods.LogEvent3p('MENU', 'SOCIAL', 'LinkedIn', afterLog, onFailure);">
-                    <img src="/Images/Comm/linkedin.png" title="LinkedIn">
-                </a>
-                <a href="https://www.youtube.com/channel/UCyVjJ3sb0DQbMXDPv6CfxCg" target="_blank"
-                    onclick="PageMethods.LogEvent3p('MENU', 'SOCIAL', 'YouTube', afterLog, onFailure);">
-                    <img src="/Images/Comm/youtube.png" title="YouTube">
-                </a>
-                <a href="mailto:info@addsa.com.ar"
-                    onclick="PageMethods.LogEvent3p('MENU', 'SOCIAL', 'Mail', afterLog, onFailure);">
-                    <img src="/Images/Comm/mail.png" title="Mail">
-                </a>
-            </span>
-
+          <div class="menuSeparator"></div>
         </div>
 
-        <a href="/Servicios.aspx" id="pageTitle">DEMO Parking</a>
+        <div id="classicMenu">
+          <img src="/Images/loading_transparent.gif" />
+        </div>
 
-        <span style="margin-left: auto; display: inline-flex; border-color: inherit;">
+        <div
+          class="menuItem"
+          id="appHelp"
+          onmouseenter="hideSMd()"
+          onclick="showHelp2()"
+        >
+          <label>Ayuda</label>
+        </div>
 
-            <button id="appPay" onclick="GoToRenovation()" style="display: none"></button>
+        <div class="menuSeparator"></div>
 
-            <button id='appWarning' onclick="ImportantNotice()" style="display: none"
-                title="Aviso del sistema">
-            </button>
-
-            
-
-            <button id="appUser" onclick="ShowUserInfo()"></button>
-
+        <span id="commMenu" onmouseenter="hideSMd()">
+          <a
+            href="https://addsa.com.ar/"
+            target="_blank"
+            onclick="PageMethods.LogEvent3p('MENU', 'SOCIAL', 'ADDSA', afterLog, onFailure);"
+          >
+            <img src="/Images/Comm/add.png" title="ADD S.A." />
+          </a>
+          <a
+            href="https://www.facebook.com/add.soluciones/"
+            target="_blank"
+            onclick="PageMethods.LogEvent3p('MENU', 'SOCIAL', 'Facebook', afterLog, onFailure);"
+          >
+            <img src="/Images/Comm/facebook.png" title="Facebook" />
+          </a>
+          <a
+            href="https://www.instagram.com/add.soluciones/"
+            target="_blank"
+            onclick="PageMethods.LogEvent3p('MENU', 'SOCIAL', 'Instagram', afterLog, onFailure);"
+          >
+            <img src="/Images/Comm/instagram.png" title="Instagram" />
+          </a>
+          <a
+            href="https://www.linkedin.com/company/add-sa/"
+            target="_blank"
+            onclick="PageMethods.LogEvent3p('MENU', 'SOCIAL', 'LinkedIn', afterLog, onFailure);"
+          >
+            <img src="/Images/Comm/linkedin.png" title="LinkedIn" />
+          </a>
+          <a
+            href="https://www.youtube.com/channel/UCyVjJ3sb0DQbMXDPv6CfxCg"
+            target="_blank"
+            onclick="PageMethods.LogEvent3p('MENU', 'SOCIAL', 'YouTube', afterLog, onFailure);"
+          >
+            <img src="/Images/Comm/youtube.png" title="YouTube" />
+          </a>
+          <a
+            href="mailto:info@addsa.com.ar"
+            onclick="PageMethods.LogEvent3p('MENU', 'SOCIAL', 'Mail', afterLog, onFailure);"
+          >
+            <img src="/Images/Comm/mail.png" title="Mail" />
+          </a>
         </span>
+      </div>
 
-        <div id="appUserPanel">
-            <h1 id="userID">jaz.vainman@gmail.com</h1>
-            <h2 id="userAlias">VELASCO</h2>
-            
-            <button id="Defaults" onclick="Defaults()">Ambiente</button>
-            
-            <a href="/ABM3.aspx?PantID=Running" target="RUN">Procesos activos</a>
-            <a href="/ChangePass.aspx" target="_top">Cambiar password</a>
-            <a href="/LogIn.aspx?close=1" target="_top">Salir</a>
-        </div>
+      <a href="/Servicios.aspx" id="pageTitle">DEMO Parking</a>
 
+      <span
+        style="margin-left: auto; display: inline-flex; border-color: inherit"
+      >
+        <button
+          id="appPay"
+          onclick="GoToRenovation()"
+          style="display: none"
+        ></button>
+
+        <button
+          id="appWarning"
+          onclick="ImportantNotice()"
+          style="display: none"
+          title="Aviso del sistema"
+        ></button>
+
+        <button id="appUser" onclick="ShowUserInfo()"></button>
+      </span>
+
+      <div id="appUserPanel">
+        <h1 id="userID">jaz.vainman@gmail.com</h1>
+        <h2 id="userAlias">VELASCO</h2>
+
+        <button id="Defaults" onclick="Defaults()">Ambiente</button>
+
+        <a href="/ABM3.aspx?PantID=Running" target="RUN">Procesos activos</a>
+        <a href="/ChangePass.aspx" target="_top">Cambiar password</a>
+        <a href="/LogIn.aspx?close=1" target="_top">Salir</a>
+      </div>
     </section>
 
     <section id="PanelsSection">
-        <div id='opaque3'></div>
-        <div id='opaque2'></div>
-        <div id='opaque'></div>
+      <div id="opaque3"></div>
+      <div id="opaque2"></div>
+      <div id="opaque"></div>
     </section>
 
     <section id="MessagesSection">
-
-        <div class="clock" id='busyMsg'>
-            <div class="outer-clock-face" id="clockFace">
-                <div class="marking marking-one"></div>
-                <div class="marking marking-two"></div>
-                <div class="marking marking-three"></div>
-                <div class="marking marking-four"></div>
-                <div class="inner-clock-face">
-                    <div class="hand hour-hand" id="hourHand"></div>
-                    <div class="hand min-hand" id="minuteHand"></div>
-                    <div class="hand second-hand" id="secondHand"></div>
-                </div>
-            </div>
+      <div class="clock" id="busyMsg">
+        <div class="outer-clock-face" id="clockFace">
+          <div class="marking marking-one"></div>
+          <div class="marking marking-two"></div>
+          <div class="marking marking-three"></div>
+          <div class="marking marking-four"></div>
+          <div class="inner-clock-face">
+            <div class="hand hour-hand" id="hourHand"></div>
+            <div class="hand min-hand" id="minuteHand"></div>
+            <div class="hand second-hand" id="secondHand"></div>
+          </div>
         </div>
+      </div>
 
-        <div id='bug'>
+      <div id="bug"></div>
+
+      <div id="netErr">
+        <h1>Sin conexión a internet</h1>
+      </div>
+
+      <div class="MSG" id="msgBox" onkeyup="MSGkeyUp()">
+        <div id="msgText"></div>
+        <button id="msgButton" class="okButton" onclick="closeMSG()">Ok</button>
+      </div>
+
+      <div class="MSG" id="msgQuestion" onkeyup="MSGQkeyUp(event)">
+        <div>
+          <div id="msgQuestionText"></div>
         </div>
-
-        <div id='netErr'>
-            <h1>Sin conexión a internet</h1>
-        </div>
-
-        <div class='MSG' id='msgBox' onkeyup="MSGkeyUp()">
-            <div id='msgText'></div>
-            <button id='msgButton' class='okButton' onclick='closeMSG()'>Ok</button>
-        </div>
-
-        <div class='MSG' id='msgQuestion' onkeyup="MSGQkeyUp(event)">
-            <div>
-                <div id='msgQuestionText'></div>
-            </div>
-            <button class='okButton' id='confirmButton'>Si</button>
-            <button class='cancelButton' id="msgQcancel" onclick='closeMsgQuestion()'>No</button>
-        </div>
-
+        <button class="okButton" id="confirmButton">Si</button>
+        <button
+          class="cancelButton"
+          id="msgQcancel"
+          onclick="closeMsgQuestion()"
+        >
+          No
+        </button>
+      </div>
     </section>
 
     <section id="FormSection">
+      <div id="helpWin">
+        <div id="helpClose" onclick="closeHelp()">X</div>
 
-        <div id='helpWin'>
-            <div id="helpClose" onclick="closeHelp()">X</div>
-            
-            <div id="helpFrame"></div>
+        <div id="helpFrame"></div>
+      </div>
+
+      <form
+        method="post"
+        action="./ADDPark.aspx?SID=867"
+        id="Form1"
+        enctype="multipart/form-data"
+      >
+        <div class="aspNetHidden">
+          <input
+            type="hidden"
+            name="__EVENTTARGET"
+            id="__EVENTTARGET"
+            value=""
+          />
+          <input
+            type="hidden"
+            name="__EVENTARGUMENT"
+            id="__EVENTARGUMENT"
+            value=""
+          />
+          <input
+            type="hidden"
+            name="__VIEWSTATE"
+            id="__VIEWSTATE"
+            value="uvQRWFpc6aZv+wzOmHG6aW6W3av+AbmJG3lgJgUBd60iM9/I1odcbvv0oyd5BJ/jBBJpP7Xs3QHcD0xgUuShBuJMH8VYID4YOWoQQkWiwbE="
+          />
         </div>
 
-        <form method="post" action="./ADDPark.aspx?SID=867" id="Form1" enctype="multipart/form-data">
-<div class="aspNetHidden">
-<input type="hidden" name="__EVENTTARGET" id="__EVENTTARGET" value="" />
-<input type="hidden" name="__EVENTARGUMENT" id="__EVENTARGUMENT" value="" />
-<input type="hidden" name="__VIEWSTATE" id="__VIEWSTATE" value="uvQRWFpc6aZv+wzOmHG6aW6W3av+AbmJG3lgJgUBd60iM9/I1odcbvv0oyd5BJ/jBBJpP7Xs3QHcD0xgUuShBuJMH8VYID4YOWoQQkWiwbE=" />
-</div>
+        <script type="text/javascript">
+          //<![CDATA[
+          var theForm = document.forms["Form1"];
+          if (!theForm) {
+            theForm = document.Form1;
+          }
+          function __doPostBack(eventTarget, eventArgument) {
+            if (!theForm.onsubmit || theForm.onsubmit() != false) {
+              theForm.__EVENTTARGET.value = eventTarget;
+              theForm.__EVENTARGUMENT.value = eventArgument;
+              theForm.submit();
+            }
+          }
+          //]]>
+        </script>
 
-<script type="text/javascript">
-//<![CDATA[
-var theForm = document.forms['Form1'];
-if (!theForm) {
-    theForm = document.Form1;
-}
-function __doPostBack(eventTarget, eventArgument) {
-    if (!theForm.onsubmit || (theForm.onsubmit() != false)) {
-        theForm.__EVENTTARGET.value = eventTarget;
-        theForm.__EVENTARGUMENT.value = eventArgument;
-        theForm.submit();
-    }
-}
-//]]>
-</script>
+        <script
+          src="/WebResource.axd?d=pynGkmcFUV13He1Qd6_TZKM8bsSAIvkA2nFVXmeQgdo_HB1w7zVUb05oqkP0OoQ7IS50bbAx1Qxj93FDDHKakQ2&amp;t=637453960754849868"
+          type="text/javascript"
+        ></script>
 
+        <script
+          src="/ScriptResource.axd?d=NJmAwtEo3Ipnlaxl6CMhvgKyPUkeDnEBDVjJcnSMY6h0I1gdMarIcVf-DEh_aql2XBpK5EbWY_6tCGhftpkJov49Vt8DUECA3jI0w-fc-HeWDYllOAhu2OJ67jQVpx_yQygmS7YJSMzIxKZlgvkbXOMf2gMzqFBfXwgGTD2V54I1&amp;t=363be08"
+          type="text/javascript"
+        ></script>
+        <script
+          src="/ScriptResource.axd?d=dwY9oWetJoJoVpgL6Zq8OEghquXWVLeXH8DbgP6H3eG0UaOVDg4pvQ23FTYqg9XS4KIHbozFoyd0k6dhLgKfMGjBPo1i-DE4aXXQjjrn-cRbQZIxZj7gKpEq4R05_8HuH-MCu_ICjlprjz9WaJhELuFpwaPaiLT-BhwGPC3GJTw1&amp;t=363be08"
+          type="text/javascript"
+        ></script>
+        <script type="text/javascript">
+          //<![CDATA[
+          var PageMethods = function () {
+            PageMethods.initializeBase(this);
+            this._timeout = 0;
+            this._userContext = null;
+            this._succeeded = null;
+            this._failed = null;
+          };
+          PageMethods.prototype = {
+            _get_path: function () {
+              var p = this.get_path();
+              if (p) return p;
+              else return PageMethods._staticInstance.get_path();
+            },
+            NEWS: function (succeededCallback, failedCallback, userContext) {
+              return this._invoke(
+                this._get_path(),
+                "NEWS",
+                false,
+                {},
+                succeededCallback,
+                failedCallback,
+                userContext
+              );
+            },
+            NEWSclick: function (
+              succeededCallback,
+              failedCallback,
+              userContext
+            ) {
+              return this._invoke(
+                this._get_path(),
+                "NEWSclick",
+                false,
+                {},
+                succeededCallback,
+                failedCallback,
+                userContext
+              );
+            },
+            DebugMode: function (
+              succeededCallback,
+              failedCallback,
+              userContext
+            ) {
+              return this._invoke(
+                this._get_path(),
+                "DebugMode",
+                false,
+                {},
+                succeededCallback,
+                failedCallback,
+                userContext
+              );
+            },
+            AliveSignal: function (
+              pantID,
+              tabID,
+              succeededCallback,
+              failedCallback,
+              userContext
+            ) {
+              return this._invoke(
+                this._get_path(),
+                "AliveSignal",
+                false,
+                { pantID: pantID, tabID: tabID },
+                succeededCallback,
+                failedCallback,
+                userContext
+              );
+            },
+            PreviousVersion: function (
+              succeededCallback,
+              failedCallback,
+              userContext
+            ) {
+              return this._invoke(
+                this._get_path(),
+                "PreviousVersion",
+                false,
+                {},
+                succeededCallback,
+                failedCallback,
+                userContext
+              );
+            },
+            MenuRedirect: function (
+              succeededCallback,
+              failedCallback,
+              userContext
+            ) {
+              return this._invoke(
+                this._get_path(),
+                "MenuRedirect",
+                false,
+                {},
+                succeededCallback,
+                failedCallback,
+                userContext
+              );
+            },
+            loadMenu: function (
+              pantID,
+              succeededCallback,
+              failedCallback,
+              userContext
+            ) {
+              return this._invoke(
+                this._get_path(),
+                "loadMenu",
+                false,
+                { pantID: pantID },
+                succeededCallback,
+                failedCallback,
+                userContext
+              );
+            },
+            loadMenuBasic: function (
+              succeededCallback,
+              failedCallback,
+              userContext
+            ) {
+              return this._invoke(
+                this._get_path(),
+                "loadMenuBasic",
+                false,
+                {},
+                succeededCallback,
+                failedCallback,
+                userContext
+              );
+            },
+            loadMenuClassic: function (
+              succeededCallback,
+              failedCallback,
+              userContext
+            ) {
+              return this._invoke(
+                this._get_path(),
+                "loadMenuClassic",
+                false,
+                {},
+                succeededCallback,
+                failedCallback,
+                userContext
+              );
+            },
+            MenuCount: function (
+              menuID,
+              count,
+              filter,
+              newTab,
+              succeededCallback,
+              failedCallback,
+              userContext
+            ) {
+              return this._invoke(
+                this._get_path(),
+                "MenuCount",
+                false,
+                {
+                  menuID: menuID,
+                  count: count,
+                  filter: filter,
+                  newTab: newTab,
+                },
+                succeededCallback,
+                failedCallback,
+                userContext
+              );
+            },
+            ComandoFiscal: function (
+              deviceID,
+              proc,
+              succeededCallback,
+              failedCallback,
+              userContext
+            ) {
+              return this._invoke(
+                this._get_path(),
+                "ComandoFiscal",
+                false,
+                { deviceID: deviceID, proc: proc },
+                succeededCallback,
+                failedCallback,
+                userContext
+              );
+            },
+            ErrorInJava2: function (
+              procName,
+              error,
+              userAgent,
+              succeededCallback,
+              failedCallback,
+              userContext
+            ) {
+              return this._invoke(
+                this._get_path(),
+                "ErrorInJava2",
+                false,
+                { procName: procName, error: error, userAgent: userAgent },
+                succeededCallback,
+                failedCallback,
+                userContext
+              );
+            },
+            ErrorInJava3: function (
+              msg,
+              detail,
+              succeededCallback,
+              failedCallback,
+              userContext
+            ) {
+              return this._invoke(
+                this._get_path(),
+                "ErrorInJava3",
+                false,
+                { msg: msg, detail: detail },
+                succeededCallback,
+                failedCallback,
+                userContext
+              );
+            },
+            LogEvent3p: function (
+              pantID,
+              procID,
+              data,
+              succeededCallback,
+              failedCallback,
+              userContext
+            ) {
+              return this._invoke(
+                this._get_path(),
+                "LogEvent3p",
+                false,
+                { pantID: pantID, procID: procID, data: data },
+                succeededCallback,
+                failedCallback,
+                userContext
+              );
+            },
+            Defaults: function (
+              pantID,
+              succeededCallback,
+              failedCallback,
+              userContext
+            ) {
+              return this._invoke(
+                this._get_path(),
+                "Defaults",
+                false,
+                { pantID: pantID },
+                succeededCallback,
+                failedCallback,
+                userContext
+              );
+            },
+            updateAmbiente: function (
+              pantID,
+              ID,
+              value,
+              succeededCallback,
+              failedCallback,
+              userContext
+            ) {
+              return this._invoke(
+                this._get_path(),
+                "updateAmbiente",
+                false,
+                { pantID: pantID, ID: ID, value: value },
+                succeededCallback,
+                failedCallback,
+                userContext
+              );
+            },
+            StartTab: function (
+              tabID,
+              succeededCallback,
+              failedCallback,
+              userContext
+            ) {
+              return this._invoke(
+                this._get_path(),
+                "StartTab",
+                false,
+                { tabID: tabID },
+                succeededCallback,
+                failedCallback,
+                userContext
+              );
+            },
+            CheckCaja: function (
+              tabID,
+              succeededCallback,
+              failedCallback,
+              userContext
+            ) {
+              return this._invoke(
+                this._get_path(),
+                "CheckCaja",
+                false,
+                { tabID: tabID },
+                succeededCallback,
+                failedCallback,
+                userContext
+              );
+            },
+            OpenCaja: function (
+              tabID,
+              fondos,
+              succeededCallback,
+              failedCallback,
+              userContext
+            ) {
+              return this._invoke(
+                this._get_path(),
+                "OpenCaja",
+                false,
+                { tabID: tabID, fondos: fondos },
+                succeededCallback,
+                failedCallback,
+                userContext
+              );
+            },
+            CloseCaja: function (
+              tabID,
+              fondos,
+              succeededCallback,
+              failedCallback,
+              userContext
+            ) {
+              return this._invoke(
+                this._get_path(),
+                "CloseCaja",
+                false,
+                { tabID: tabID, fondos: fondos },
+                succeededCallback,
+                failedCallback,
+                userContext
+              );
+            },
+            APWIP: function (
+              from,
+              succeededCallback,
+              failedCallback,
+              userContext
+            ) {
+              return this._invoke(
+                this._get_path(),
+                "APWIP",
+                false,
+                { from: from },
+                succeededCallback,
+                failedCallback,
+                userContext
+              );
+            },
+            GetTicketInfo: function (
+              tabID,
+              TipOpe,
+              Tarifa,
+              ticket,
+              ingreso,
+              succeededCallback,
+              failedCallback,
+              userContext
+            ) {
+              return this._invoke(
+                this._get_path(),
+                "GetTicketInfo",
+                false,
+                {
+                  tabID: tabID,
+                  TipOpe: TipOpe,
+                  Tarifa: Tarifa,
+                  ticket: ticket,
+                  ingreso: ingreso,
+                },
+                succeededCallback,
+                failedCallback,
+                userContext
+              );
+            },
+            Efectivo: function (
+              tabID,
+              APagar,
+              succeededCallback,
+              failedCallback,
+              userContext
+            ) {
+              return this._invoke(
+                this._get_path(),
+                "Efectivo",
+                false,
+                { tabID: tabID, APagar: APagar },
+                succeededCallback,
+                failedCallback,
+                userContext
+              );
+            },
+            TicketEntrada: function (
+              tabID,
+              tarifa,
+              patente,
+              succeededCallback,
+              failedCallback,
+              userContext
+            ) {
+              return this._invoke(
+                this._get_path(),
+                "TicketEntrada",
+                false,
+                { tabID: tabID, tarifa: tarifa, patente: patente },
+                succeededCallback,
+                failedCallback,
+                userContext
+              );
+            },
+            Barreras: function (
+              tabID,
+              dispositivo,
+              subir,
+              motivo,
+              observacion,
+              succeededCallback,
+              failedCallback,
+              userContext
+            ) {
+              return this._invoke(
+                this._get_path(),
+                "Barreras",
+                false,
+                {
+                  tabID: tabID,
+                  dispositivo: dispositivo,
+                  subir: subir,
+                  motivo: motivo,
+                  observacion: observacion,
+                },
+                succeededCallback,
+                failedCallback,
+                userContext
+              );
+            },
+          };
+          PageMethods.registerClass("PageMethods", Sys.Net.WebServiceProxy);
+          PageMethods._staticInstance = new PageMethods();
+          PageMethods.set_path = function (value) {
+            PageMethods._staticInstance.set_path(value);
+          };
+          PageMethods.get_path = function () {
+            return PageMethods._staticInstance.get_path();
+          };
+          PageMethods.set_timeout = function (value) {
+            PageMethods._staticInstance.set_timeout(value);
+          };
+          PageMethods.get_timeout = function () {
+            return PageMethods._staticInstance.get_timeout();
+          };
+          PageMethods.set_defaultUserContext = function (value) {
+            PageMethods._staticInstance.set_defaultUserContext(value);
+          };
+          PageMethods.get_defaultUserContext = function () {
+            return PageMethods._staticInstance.get_defaultUserContext();
+          };
+          PageMethods.set_defaultSucceededCallback = function (value) {
+            PageMethods._staticInstance.set_defaultSucceededCallback(value);
+          };
+          PageMethods.get_defaultSucceededCallback = function () {
+            return PageMethods._staticInstance.get_defaultSucceededCallback();
+          };
+          PageMethods.set_defaultFailedCallback = function (value) {
+            PageMethods._staticInstance.set_defaultFailedCallback(value);
+          };
+          PageMethods.get_defaultFailedCallback = function () {
+            return PageMethods._staticInstance.get_defaultFailedCallback();
+          };
+          PageMethods.set_enableJsonp = function (value) {
+            PageMethods._staticInstance.set_enableJsonp(value);
+          };
+          PageMethods.get_enableJsonp = function () {
+            return PageMethods._staticInstance.get_enableJsonp();
+          };
+          PageMethods.set_jsonpCallbackParameter = function (value) {
+            PageMethods._staticInstance.set_jsonpCallbackParameter(value);
+          };
+          PageMethods.get_jsonpCallbackParameter = function () {
+            return PageMethods._staticInstance.get_jsonpCallbackParameter();
+          };
+          PageMethods.set_path("ADDPark.aspx");
+          PageMethods.NEWS = function (onSuccess, onFailed, userContext) {
+            PageMethods._staticInstance.NEWS(onSuccess, onFailed, userContext);
+          };
+          PageMethods.NEWSclick = function (onSuccess, onFailed, userContext) {
+            PageMethods._staticInstance.NEWSclick(
+              onSuccess,
+              onFailed,
+              userContext
+            );
+          };
+          PageMethods.DebugMode = function (onSuccess, onFailed, userContext) {
+            PageMethods._staticInstance.DebugMode(
+              onSuccess,
+              onFailed,
+              userContext
+            );
+          };
+          PageMethods.AliveSignal = function (
+            pantID,
+            tabID,
+            onSuccess,
+            onFailed,
+            userContext
+          ) {
+            PageMethods._staticInstance.AliveSignal(
+              pantID,
+              tabID,
+              onSuccess,
+              onFailed,
+              userContext
+            );
+          };
+          PageMethods.PreviousVersion = function (
+            onSuccess,
+            onFailed,
+            userContext
+          ) {
+            PageMethods._staticInstance.PreviousVersion(
+              onSuccess,
+              onFailed,
+              userContext
+            );
+          };
+          PageMethods.MenuRedirect = function (
+            onSuccess,
+            onFailed,
+            userContext
+          ) {
+            PageMethods._staticInstance.MenuRedirect(
+              onSuccess,
+              onFailed,
+              userContext
+            );
+          };
+          PageMethods.loadMenu = function (
+            pantID,
+            onSuccess,
+            onFailed,
+            userContext
+          ) {
+            PageMethods._staticInstance.loadMenu(
+              pantID,
+              onSuccess,
+              onFailed,
+              userContext
+            );
+          };
+          PageMethods.loadMenuBasic = function (
+            onSuccess,
+            onFailed,
+            userContext
+          ) {
+            PageMethods._staticInstance.loadMenuBasic(
+              onSuccess,
+              onFailed,
+              userContext
+            );
+          };
+          PageMethods.loadMenuClassic = function (
+            onSuccess,
+            onFailed,
+            userContext
+          ) {
+            PageMethods._staticInstance.loadMenuClassic(
+              onSuccess,
+              onFailed,
+              userContext
+            );
+          };
+          PageMethods.MenuCount = function (
+            menuID,
+            count,
+            filter,
+            newTab,
+            onSuccess,
+            onFailed,
+            userContext
+          ) {
+            PageMethods._staticInstance.MenuCount(
+              menuID,
+              count,
+              filter,
+              newTab,
+              onSuccess,
+              onFailed,
+              userContext
+            );
+          };
+          PageMethods.ComandoFiscal = function (
+            deviceID,
+            proc,
+            onSuccess,
+            onFailed,
+            userContext
+          ) {
+            PageMethods._staticInstance.ComandoFiscal(
+              deviceID,
+              proc,
+              onSuccess,
+              onFailed,
+              userContext
+            );
+          };
+          PageMethods.ErrorInJava2 = function (
+            procName,
+            error,
+            userAgent,
+            onSuccess,
+            onFailed,
+            userContext
+          ) {
+            PageMethods._staticInstance.ErrorInJava2(
+              procName,
+              error,
+              userAgent,
+              onSuccess,
+              onFailed,
+              userContext
+            );
+          };
+          PageMethods.ErrorInJava3 = function (
+            msg,
+            detail,
+            onSuccess,
+            onFailed,
+            userContext
+          ) {
+            PageMethods._staticInstance.ErrorInJava3(
+              msg,
+              detail,
+              onSuccess,
+              onFailed,
+              userContext
+            );
+          };
+          PageMethods.LogEvent3p = function (
+            pantID,
+            procID,
+            data,
+            onSuccess,
+            onFailed,
+            userContext
+          ) {
+            PageMethods._staticInstance.LogEvent3p(
+              pantID,
+              procID,
+              data,
+              onSuccess,
+              onFailed,
+              userContext
+            );
+          };
+          PageMethods.Defaults = function (
+            pantID,
+            onSuccess,
+            onFailed,
+            userContext
+          ) {
+            PageMethods._staticInstance.Defaults(
+              pantID,
+              onSuccess,
+              onFailed,
+              userContext
+            );
+          };
+          PageMethods.updateAmbiente = function (
+            pantID,
+            ID,
+            value,
+            onSuccess,
+            onFailed,
+            userContext
+          ) {
+            PageMethods._staticInstance.updateAmbiente(
+              pantID,
+              ID,
+              value,
+              onSuccess,
+              onFailed,
+              userContext
+            );
+          };
+          PageMethods.StartTab = function (
+            tabID,
+            onSuccess,
+            onFailed,
+            userContext
+          ) {
+            PageMethods._staticInstance.StartTab(
+              tabID,
+              onSuccess,
+              onFailed,
+              userContext
+            );
+          };
+          PageMethods.CheckCaja = function (
+            tabID,
+            onSuccess,
+            onFailed,
+            userContext
+          ) {
+            PageMethods._staticInstance.CheckCaja(
+              tabID,
+              onSuccess,
+              onFailed,
+              userContext
+            );
+          };
+          PageMethods.OpenCaja = function (
+            tabID,
+            fondos,
+            onSuccess,
+            onFailed,
+            userContext
+          ) {
+            PageMethods._staticInstance.OpenCaja(
+              tabID,
+              fondos,
+              onSuccess,
+              onFailed,
+              userContext
+            );
+          };
+          PageMethods.CloseCaja = function (
+            tabID,
+            fondos,
+            onSuccess,
+            onFailed,
+            userContext
+          ) {
+            PageMethods._staticInstance.CloseCaja(
+              tabID,
+              fondos,
+              onSuccess,
+              onFailed,
+              userContext
+            );
+          };
+          PageMethods.APWIP = function (
+            from,
+            onSuccess,
+            onFailed,
+            userContext
+          ) {
+            PageMethods._staticInstance.APWIP(
+              from,
+              onSuccess,
+              onFailed,
+              userContext
+            );
+          };
+          PageMethods.GetTicketInfo = function (
+            tabID,
+            TipOpe,
+            Tarifa,
+            ticket,
+            ingreso,
+            onSuccess,
+            onFailed,
+            userContext
+          ) {
+            PageMethods._staticInstance.GetTicketInfo(
+              tabID,
+              TipOpe,
+              Tarifa,
+              ticket,
+              ingreso,
+              onSuccess,
+              onFailed,
+              userContext
+            );
+          };
+          PageMethods.Efectivo = function (
+            tabID,
+            APagar,
+            onSuccess,
+            onFailed,
+            userContext
+          ) {
+            PageMethods._staticInstance.Efectivo(
+              tabID,
+              APagar,
+              onSuccess,
+              onFailed,
+              userContext
+            );
+          };
+          PageMethods.TicketEntrada = function (
+            tabID,
+            tarifa,
+            patente,
+            onSuccess,
+            onFailed,
+            userContext
+          ) {
+            PageMethods._staticInstance.TicketEntrada(
+              tabID,
+              tarifa,
+              patente,
+              onSuccess,
+              onFailed,
+              userContext
+            );
+          };
+          PageMethods.Barreras = function (
+            tabID,
+            dispositivo,
+            subir,
+            motivo,
+            observacion,
+            onSuccess,
+            onFailed,
+            userContext
+          ) {
+            PageMethods._staticInstance.Barreras(
+              tabID,
+              dispositivo,
+              subir,
+              motivo,
+              observacion,
+              onSuccess,
+              onFailed,
+              userContext
+            );
+          };
+          //]]>
+        </script>
 
-<script src="/WebResource.axd?d=pynGkmcFUV13He1Qd6_TZKM8bsSAIvkA2nFVXmeQgdo_HB1w7zVUb05oqkP0OoQ7IS50bbAx1Qxj93FDDHKakQ2&amp;t=637453960754849868" type="text/javascript"></script>
+        <div class="aspNetHidden">
+          <input
+            type="hidden"
+            name="__VIEWSTATEGENERATOR"
+            id="__VIEWSTATEGENERATOR"
+            value="2B4C28FB"
+          />
+        </div>
+        <script type="text/javascript">
+          //<![CDATA[
+          Sys.WebForms.PageRequestManager._initialize(
+            "ctl00$ScriptManager",
+            "Form1",
+            [],
+            [],
+            [],
+            90,
+            "ctl00"
+          );
+          //]]>
+        </script>
+      </form>
 
-
-<script src="/ScriptResource.axd?d=NJmAwtEo3Ipnlaxl6CMhvgKyPUkeDnEBDVjJcnSMY6h0I1gdMarIcVf-DEh_aql2XBpK5EbWY_6tCGhftpkJov49Vt8DUECA3jI0w-fc-HeWDYllOAhu2OJ67jQVpx_yQygmS7YJSMzIxKZlgvkbXOMf2gMzqFBfXwgGTD2V54I1&amp;t=363be08" type="text/javascript"></script>
-<script src="/ScriptResource.axd?d=dwY9oWetJoJoVpgL6Zq8OEghquXWVLeXH8DbgP6H3eG0UaOVDg4pvQ23FTYqg9XS4KIHbozFoyd0k6dhLgKfMGjBPo1i-DE4aXXQjjrn-cRbQZIxZj7gKpEq4R05_8HuH-MCu_ICjlprjz9WaJhELuFpwaPaiLT-BhwGPC3GJTw1&amp;t=363be08" type="text/javascript"></script>
-<script type="text/javascript">
-//<![CDATA[
-var PageMethods = function() {
-PageMethods.initializeBase(this);
-this._timeout = 0;
-this._userContext = null;
-this._succeeded = null;
-this._failed = null;
-}
-PageMethods.prototype = {
-_get_path:function() {
- var p = this.get_path();
- if (p) return p;
- else return PageMethods._staticInstance.get_path();},
-NEWS:function(succeededCallback, failedCallback, userContext) {
-return this._invoke(this._get_path(), 'NEWS',false,{},succeededCallback,failedCallback,userContext); },
-NEWSclick:function(succeededCallback, failedCallback, userContext) {
-return this._invoke(this._get_path(), 'NEWSclick',false,{},succeededCallback,failedCallback,userContext); },
-DebugMode:function(succeededCallback, failedCallback, userContext) {
-return this._invoke(this._get_path(), 'DebugMode',false,{},succeededCallback,failedCallback,userContext); },
-AliveSignal:function(pantID,tabID,succeededCallback, failedCallback, userContext) {
-return this._invoke(this._get_path(), 'AliveSignal',false,{pantID:pantID,tabID:tabID},succeededCallback,failedCallback,userContext); },
-PreviousVersion:function(succeededCallback, failedCallback, userContext) {
-return this._invoke(this._get_path(), 'PreviousVersion',false,{},succeededCallback,failedCallback,userContext); },
-MenuRedirect:function(succeededCallback, failedCallback, userContext) {
-return this._invoke(this._get_path(), 'MenuRedirect',false,{},succeededCallback,failedCallback,userContext); },
-loadMenu:function(pantID,succeededCallback, failedCallback, userContext) {
-return this._invoke(this._get_path(), 'loadMenu',false,{pantID:pantID},succeededCallback,failedCallback,userContext); },
-loadMenuBasic:function(succeededCallback, failedCallback, userContext) {
-return this._invoke(this._get_path(), 'loadMenuBasic',false,{},succeededCallback,failedCallback,userContext); },
-loadMenuClassic:function(succeededCallback, failedCallback, userContext) {
-return this._invoke(this._get_path(), 'loadMenuClassic',false,{},succeededCallback,failedCallback,userContext); },
-MenuCount:function(menuID,count,filter,newTab,succeededCallback, failedCallback, userContext) {
-return this._invoke(this._get_path(), 'MenuCount',false,{menuID:menuID,count:count,filter:filter,newTab:newTab},succeededCallback,failedCallback,userContext); },
-ComandoFiscal:function(deviceID,proc,succeededCallback, failedCallback, userContext) {
-return this._invoke(this._get_path(), 'ComandoFiscal',false,{deviceID:deviceID,proc:proc},succeededCallback,failedCallback,userContext); },
-ErrorInJava2:function(procName,error,userAgent,succeededCallback, failedCallback, userContext) {
-return this._invoke(this._get_path(), 'ErrorInJava2',false,{procName:procName,error:error,userAgent:userAgent},succeededCallback,failedCallback,userContext); },
-ErrorInJava3:function(msg,detail,succeededCallback, failedCallback, userContext) {
-return this._invoke(this._get_path(), 'ErrorInJava3',false,{msg:msg,detail:detail},succeededCallback,failedCallback,userContext); },
-LogEvent3p:function(pantID,procID,data,succeededCallback, failedCallback, userContext) {
-return this._invoke(this._get_path(), 'LogEvent3p',false,{pantID:pantID,procID:procID,data:data},succeededCallback,failedCallback,userContext); },
-Defaults:function(pantID,succeededCallback, failedCallback, userContext) {
-return this._invoke(this._get_path(), 'Defaults',false,{pantID:pantID},succeededCallback,failedCallback,userContext); },
-updateAmbiente:function(pantID,ID,value,succeededCallback, failedCallback, userContext) {
-return this._invoke(this._get_path(), 'updateAmbiente',false,{pantID:pantID,ID:ID,value:value},succeededCallback,failedCallback,userContext); },
-StartTab:function(tabID,succeededCallback, failedCallback, userContext) {
-return this._invoke(this._get_path(), 'StartTab',false,{tabID:tabID},succeededCallback,failedCallback,userContext); },
-CheckCaja:function(tabID,succeededCallback, failedCallback, userContext) {
-return this._invoke(this._get_path(), 'CheckCaja',false,{tabID:tabID},succeededCallback,failedCallback,userContext); },
-OpenCaja:function(tabID,fondos,succeededCallback, failedCallback, userContext) {
-return this._invoke(this._get_path(), 'OpenCaja',false,{tabID:tabID,fondos:fondos},succeededCallback,failedCallback,userContext); },
-CloseCaja:function(tabID,fondos,succeededCallback, failedCallback, userContext) {
-return this._invoke(this._get_path(), 'CloseCaja',false,{tabID:tabID,fondos:fondos},succeededCallback,failedCallback,userContext); },
-APWIP:function(from,succeededCallback, failedCallback, userContext) {
-return this._invoke(this._get_path(), 'APWIP',false,{from:from},succeededCallback,failedCallback,userContext); },
-GetTicketInfo:function(tabID,TipOpe,Tarifa,ticket,ingreso,succeededCallback, failedCallback, userContext) {
-return this._invoke(this._get_path(), 'GetTicketInfo',false,{tabID:tabID,TipOpe:TipOpe,Tarifa:Tarifa,ticket:ticket,ingreso:ingreso},succeededCallback,failedCallback,userContext); },
-Efectivo:function(tabID,APagar,succeededCallback, failedCallback, userContext) {
-return this._invoke(this._get_path(), 'Efectivo',false,{tabID:tabID,APagar:APagar},succeededCallback,failedCallback,userContext); },
-TicketEntrada:function(tabID,tarifa,patente,succeededCallback, failedCallback, userContext) {
-return this._invoke(this._get_path(), 'TicketEntrada',false,{tabID:tabID,tarifa:tarifa,patente:patente},succeededCallback,failedCallback,userContext); },
-Barreras:function(tabID,dispositivo,subir,motivo,observacion,succeededCallback, failedCallback, userContext) {
-return this._invoke(this._get_path(), 'Barreras',false,{tabID:tabID,dispositivo:dispositivo,subir:subir,motivo:motivo,observacion:observacion},succeededCallback,failedCallback,userContext); }}
-PageMethods.registerClass('PageMethods',Sys.Net.WebServiceProxy);
-PageMethods._staticInstance = new PageMethods();
-PageMethods.set_path = function(value) { PageMethods._staticInstance.set_path(value); }
-PageMethods.get_path = function() { return PageMethods._staticInstance.get_path(); }
-PageMethods.set_timeout = function(value) { PageMethods._staticInstance.set_timeout(value); }
-PageMethods.get_timeout = function() { return PageMethods._staticInstance.get_timeout(); }
-PageMethods.set_defaultUserContext = function(value) { PageMethods._staticInstance.set_defaultUserContext(value); }
-PageMethods.get_defaultUserContext = function() { return PageMethods._staticInstance.get_defaultUserContext(); }
-PageMethods.set_defaultSucceededCallback = function(value) { PageMethods._staticInstance.set_defaultSucceededCallback(value); }
-PageMethods.get_defaultSucceededCallback = function() { return PageMethods._staticInstance.get_defaultSucceededCallback(); }
-PageMethods.set_defaultFailedCallback = function(value) { PageMethods._staticInstance.set_defaultFailedCallback(value); }
-PageMethods.get_defaultFailedCallback = function() { return PageMethods._staticInstance.get_defaultFailedCallback(); }
-PageMethods.set_enableJsonp = function(value) { PageMethods._staticInstance.set_enableJsonp(value); }
-PageMethods.get_enableJsonp = function() { return PageMethods._staticInstance.get_enableJsonp(); }
-PageMethods.set_jsonpCallbackParameter = function(value) { PageMethods._staticInstance.set_jsonpCallbackParameter(value); }
-PageMethods.get_jsonpCallbackParameter = function() { return PageMethods._staticInstance.get_jsonpCallbackParameter(); }
-PageMethods.set_path("ADDPark.aspx");
-PageMethods.NEWS= function(onSuccess,onFailed,userContext) {PageMethods._staticInstance.NEWS(onSuccess,onFailed,userContext); }
-PageMethods.NEWSclick= function(onSuccess,onFailed,userContext) {PageMethods._staticInstance.NEWSclick(onSuccess,onFailed,userContext); }
-PageMethods.DebugMode= function(onSuccess,onFailed,userContext) {PageMethods._staticInstance.DebugMode(onSuccess,onFailed,userContext); }
-PageMethods.AliveSignal= function(pantID,tabID,onSuccess,onFailed,userContext) {PageMethods._staticInstance.AliveSignal(pantID,tabID,onSuccess,onFailed,userContext); }
-PageMethods.PreviousVersion= function(onSuccess,onFailed,userContext) {PageMethods._staticInstance.PreviousVersion(onSuccess,onFailed,userContext); }
-PageMethods.MenuRedirect= function(onSuccess,onFailed,userContext) {PageMethods._staticInstance.MenuRedirect(onSuccess,onFailed,userContext); }
-PageMethods.loadMenu= function(pantID,onSuccess,onFailed,userContext) {PageMethods._staticInstance.loadMenu(pantID,onSuccess,onFailed,userContext); }
-PageMethods.loadMenuBasic= function(onSuccess,onFailed,userContext) {PageMethods._staticInstance.loadMenuBasic(onSuccess,onFailed,userContext); }
-PageMethods.loadMenuClassic= function(onSuccess,onFailed,userContext) {PageMethods._staticInstance.loadMenuClassic(onSuccess,onFailed,userContext); }
-PageMethods.MenuCount= function(menuID,count,filter,newTab,onSuccess,onFailed,userContext) {PageMethods._staticInstance.MenuCount(menuID,count,filter,newTab,onSuccess,onFailed,userContext); }
-PageMethods.ComandoFiscal= function(deviceID,proc,onSuccess,onFailed,userContext) {PageMethods._staticInstance.ComandoFiscal(deviceID,proc,onSuccess,onFailed,userContext); }
-PageMethods.ErrorInJava2= function(procName,error,userAgent,onSuccess,onFailed,userContext) {PageMethods._staticInstance.ErrorInJava2(procName,error,userAgent,onSuccess,onFailed,userContext); }
-PageMethods.ErrorInJava3= function(msg,detail,onSuccess,onFailed,userContext) {PageMethods._staticInstance.ErrorInJava3(msg,detail,onSuccess,onFailed,userContext); }
-PageMethods.LogEvent3p= function(pantID,procID,data,onSuccess,onFailed,userContext) {PageMethods._staticInstance.LogEvent3p(pantID,procID,data,onSuccess,onFailed,userContext); }
-PageMethods.Defaults= function(pantID,onSuccess,onFailed,userContext) {PageMethods._staticInstance.Defaults(pantID,onSuccess,onFailed,userContext); }
-PageMethods.updateAmbiente= function(pantID,ID,value,onSuccess,onFailed,userContext) {PageMethods._staticInstance.updateAmbiente(pantID,ID,value,onSuccess,onFailed,userContext); }
-PageMethods.StartTab= function(tabID,onSuccess,onFailed,userContext) {PageMethods._staticInstance.StartTab(tabID,onSuccess,onFailed,userContext); }
-PageMethods.CheckCaja= function(tabID,onSuccess,onFailed,userContext) {PageMethods._staticInstance.CheckCaja(tabID,onSuccess,onFailed,userContext); }
-PageMethods.OpenCaja= function(tabID,fondos,onSuccess,onFailed,userContext) {PageMethods._staticInstance.OpenCaja(tabID,fondos,onSuccess,onFailed,userContext); }
-PageMethods.CloseCaja= function(tabID,fondos,onSuccess,onFailed,userContext) {PageMethods._staticInstance.CloseCaja(tabID,fondos,onSuccess,onFailed,userContext); }
-PageMethods.APWIP= function(from,onSuccess,onFailed,userContext) {PageMethods._staticInstance.APWIP(from,onSuccess,onFailed,userContext); }
-PageMethods.GetTicketInfo= function(tabID,TipOpe,Tarifa,ticket,ingreso,onSuccess,onFailed,userContext) {PageMethods._staticInstance.GetTicketInfo(tabID,TipOpe,Tarifa,ticket,ingreso,onSuccess,onFailed,userContext); }
-PageMethods.Efectivo= function(tabID,APagar,onSuccess,onFailed,userContext) {PageMethods._staticInstance.Efectivo(tabID,APagar,onSuccess,onFailed,userContext); }
-PageMethods.TicketEntrada= function(tabID,tarifa,patente,onSuccess,onFailed,userContext) {PageMethods._staticInstance.TicketEntrada(tabID,tarifa,patente,onSuccess,onFailed,userContext); }
-PageMethods.Barreras= function(tabID,dispositivo,subir,motivo,observacion,onSuccess,onFailed,userContext) {PageMethods._staticInstance.Barreras(tabID,dispositivo,subir,motivo,observacion,onSuccess,onFailed,userContext); }
-//]]>
-</script>
-
-<div class="aspNetHidden">
-
-	<input type="hidden" name="__VIEWSTATEGENERATOR" id="__VIEWSTATEGENERATOR" value="2B4C28FB" />
-</div>
-            <script type="text/javascript">
-//<![CDATA[
-Sys.WebForms.PageRequestManager._initialize('ctl00$ScriptManager', 'Form1', [], [], [], 90, 'ctl00');
-//]]>
-</script>
-
-        </form>
-
-        
-
-    <section id="Brand">
+      <section id="Provisory">
         <h1>ADDPark /cloud</h1>
         <h2>Alpha 6.2</h2>
         <a
           href="https://docs.google.com/document/d/1QsagLXArw8bAd90pGrxG8QEyTNEpCgNjMmQOnVDPdCM"
           target="ADDParkHelp"
-          >Manual de uso</a>
-    </section>
+          >Manual de uso</a
+        >
+      </section>
 
-    <section id="Varios" style="display: none">
-        <button onclick="ShowOpenCaja()" id="OpenCaja">Abrir caja de cobro</button>
+      <section id="Varios" style="display: none">
+        <button onclick="ShowOpenCaja()" id="OpenCaja">
+          Abrir caja de cobro
+        </button>
         <button onclick="APWIP(this)" id="Recuento">Recuento de fondos</button>
         <button onclick="APWIP(this)">Estadistico</button>
         <button onclick="APWIP(this)">Autos en playa</button>
         <button onclick="APWIP(this)" id="NCxTicket">NC x Tickets</button>
-    </section>
+      </section>
 
-    <section id="PopUps" style="display: none">
+      <section id="PopUps" style="display: none">
         <button onclick="ClosePopUp()" id="PopUpClose">X</button>
 
         <fieldset id="Fondos">
-            <label for="ImporteFondos">Importe</label>
-            <input id="ImporteFondos" type="number" style="width: 100px" />
-            <label for="CocherasLibres">Cocheras libres</label>
-            <input id="CocherasLibres" type="number" style="width: 50px" />
-            <label for="AutosEnPlaya">Autos en playa</label>
-            <input id="AutosEnPlaya" type="number" style="width: 50px" />
+          <label for="ImporteFondos">Importe</label>
+          <input id="ImporteFondos" type="number" style="width: 100px" />
+          <label for="CocherasLibres">Cocheras libres</label>
+          <input id="CocherasLibres" type="number" style="width: 50px" />
+          <label for="AutosEnPlaya">Autos en playa</label>
+          <input id="AutosEnPlaya" type="number" style="width: 50px" />
         </fieldset>
 
         <fieldset id="TicketEntrada">
-            <label for="TarifaEntrada">Tarifa</label>
-            <select id="TarifaEntrada" style="width: 200px">
-                <option>N/A</option>
-            </select>
-            <label for="PatenteEntrada">Patente</label>
-            <input id="PatenteEntrada" maxlength="10" style="width: 70px" />
+          <label for="TarifaEntrada">Tarifa</label>
+          <select id="TarifaEntrada" style="width: 200px">
+            <option>N/A</option>
+          </select>
+          <label for="PatenteEntrada">Patente</label>
+          <input id="PatenteEntrada" maxlength="10" style="width: 70px" />
         </fieldset>
 
         <fieldset id="Barreras">
-            <label for="EntradaSalida">Entrada/Salida</label>
-            <select id="EntradaSalida" style="width: 200px">
-                <option>N/A</option>
-            </select>
+          <label for="EntradaSalida">Entrada/Salida</label>
+          <select id="EntradaSalida" style="width: 200px">
+            <option>N/A</option>
+          </select>
 
-            <input type="radio" id="SubirBarrera" name="Barrera" checked="checked">
-            <label for="SubirBarrera">Subir</label>
-            <input type="radio" id="BajarBarrera" name="Barrera">
-            <label for="BajarBarrera">Bajar</label>
+          <input
+            type="radio"
+            id="SubirBarrera"
+            name="Barrera"
+            checked="checked"
+          />
+          <label for="SubirBarrera">Subir</label>
+          <input type="radio" id="BajarBarrera" name="Barrera" />
+          <label for="BajarBarrera">Bajar</label>
 
-            <label for="MotivoBarrera">Motivo</label>
-            <select id="MotivoBarrera" style="width: 200px">
-                <option>N/A</option>
-            </select>
+          <label for="MotivoBarrera">Motivo</label>
+          <select id="MotivoBarrera" style="width: 200px">
+            <option>N/A</option>
+          </select>
 
-            <label for="BarreraObs">Observacion</label>
-            <input id="BarreraObs" maxlength="50" style="width: 350px" />
+          <label for="BarreraObs">Observacion</label>
+          <input id="BarreraObs" maxlength="50" style="width: 350px" />
         </fieldset>
 
         <button onclick="APWIP(this)" id="PopUpConfirm">CONFIRMAR</button>
-    </section>
+      </section>
 
-    <section id="Cobro">
-
-        <fieldset id="Operacion" class="RadioAsButtons" onclick="ResetOperacion()">
-            <input type="radio" id="TICKET" value="NO00" name="Operacion" checked="checked">
-            <label for="TICKET">TICKET</label>
-            <input type="radio" id="PERDIDA" value="PT00" name="Operacion" disabled="disabled">
-            <label for="PERDIDA">PERDIDA</label>
-            <input type="radio" id="ABONADO" value="IN00" name="Operacion" disabled="disabled">
-            <label for="ABONADO">ABONADO</label>
-            <input type="radio" id="MANUAL" value="no00" name="Operacion">
-            <label for="MANUAL">MANUAL</label>
+      <section id="Cobro">
+        <fieldset
+          id="Operacion"
+          class="RadioAsButtons"
+          onclick="ResetOperacion()"
+        >
+          <input
+            type="radio"
+            id="TICKET"
+            value="NO00"
+            name="Operacion"
+            checked="checked"
+          />
+          <label for="TICKET">TICKET</label>
+          <input
+            type="radio"
+            id="PERDIDA"
+            value="PT00"
+            name="Operacion"
+            disabled="disabled"
+          />
+          <label for="PERDIDA">PERDIDA</label>
+          <input
+            type="radio"
+            id="ABONADO"
+            value="IN00"
+            name="Operacion"
+            disabled="disabled"
+          />
+          <label for="ABONADO">ABONADO</label>
+          <input type="radio" id="MANUAL" value="no00" name="Operacion" />
+          <label for="MANUAL">MANUAL</label>
         </fieldset>
 
         <br />
 
         <fieldset id="Tarifa" class="RadioAsButtons" onclick="TicketChange()">
+          <input
+            type="radio"
+            id="N104"
+            value="N104"
+            name="Tarifas"
+            checked="checked"
+          />
+          <label for="N104">NORMAL AUTO</label
+          ><input type="radio" id="N204" value="N204" name="Tarifas" />
+          <label for="N204">CAMIONETA</label
+          ><input type="radio" id="N304" value="N304" name="Tarifas" />
+          <label for="N304">MOTO</label
+          ><input type="radio" id="N404" value="N404" name="Tarifas" />
+          <label for="N404">BICICLETA</label>
         </fieldset>
 
         <br />
 
         <fieldset id="TicketInfo">
+          <div>
+            <label for="Ticket">Numero de ticket:</label>
+            <input
+              type="search"
+              id="Ticket"
+              maxlength="10"
+              autocomplete="off"
+              onchange="TicketChange()"
+            />
 
-            <div>
-                <label for="Ticket">Numero de ticket:</label>
-                <input type="search" id="Ticket" maxlength="10" autocomplete="off" onchange="TicketChange()">
+            <label for="Permanencia">Permanencia:</label>
+            <input type="text" id="Permanencia" readonly="readonly" />
+          </div>
 
-                <label for="Permanencia">Permanencia:</label>
-                <input type="text" id="Permanencia" readonly="readonly">
-            </div>
+          <div>
+            <label for="Ingreso">Ingreso:</label>
+            <input
+              type="datetime-local"
+              id="Ingreso"
+              readonly="readonly"
+              onchange="TicketChange()"
+            />
 
-            <div>
-                <label for="Ingreso">Ingreso:</label>
-                <input type="datetime-local" id="Ingreso" readonly="readonly"  onchange="TicketChange()">
+            <label for="Limite">Limite:</label>
+            <input type="datetime-local" id="Limite" readonly="readonly" />
 
-                <label for="Limite">Limite:</label>
-                <input type="datetime-local" id="Limite" readonly="readonly">
-
-                <label for="Importe">Importe:</label>
-                <input type="number" id="Importe" readonly="readonly">
-            </div>
-
+            <label for="Importe">Importe:</label>
+            <input type="number" id="Importe" readonly="readonly" />
+          </div>
         </fieldset>
 
         <br />
 
         <fieldset id="Fiscal">
-            <label for="Cliente">Cliente:</label>
-            <input type="search" id="Cliente" name="Fiscal" disabled="disabled">
-            <input type="radio" id="NoFact" name="Fiscal" checked="checked">
-            <label for="NoFact">Ticket</label>
-            <input type="radio" id="SiFact" name="Fiscal" disabled="disabled">
-            <label for="SiFact">Ticket Factura</label>
+          <label for="Cliente">Cliente:</label>
+          <input type="search" id="Cliente" name="Fiscal" disabled="disabled" />
+          <input type="radio" id="NoFact" name="Fiscal" checked="checked" />
+          <label for="NoFact">Ticket</label>
+          <input type="radio" id="SiFact" name="Fiscal" disabled="disabled" />
+          <label for="SiFact">Ticket Factura</label>
         </fieldset>
 
         <br />
 
         <fieldset id="Medio" class="RadioAsButtons" disabled="disabled">
-            <input type="radio" id="EFECTIVO" value="EFECTIVO" name="Pago" onclick="Efectivo()">
-            <label for="EFECTIVO">EFECTIVO</label>
-            <input type="radio" id="TARJETA" value="TARJETA" name="Pago" disabled="disabled">
-            <label for="TARJETA">TARJETA</label>
-            <input type="radio" id="BILLETE" value="BILLETE" name="Pago" disabled="disabled">
-            <label for="BILLETE">BILLETE</label>
-            <input type="radio" id="PASE" value="PASE" name="Pago" disabled="disabled">
-            <label for="PASE">PASE</label>
-            <input type="radio" id="DEUDA" value="DEUDA" name="Pago" disabled="disabled">
-            <label for="DEUDA">DEUDA</label>
-            <input type="radio" id="COMERCIAL" value="COMERCIAL" name="Pago" disabled="disabled">
-            <label for="COMERCIAL">COMERCIAL</label>
+          <input
+            type="radio"
+            id="EFECTIVO"
+            value="EFECTIVO"
+            name="Pago"
+            onclick="Efectivo()"
+          />
+          <label for="EFECTIVO">EFECTIVO</label>
+          <input
+            type="radio"
+            id="TARJETA"
+            value="TARJETA"
+            name="Pago"
+            disabled="disabled"
+          />
+          <label for="TARJETA">TARJETA</label>
+          <input
+            type="radio"
+            id="BILLETE"
+            value="BILLETE"
+            name="Pago"
+            disabled="disabled"
+          />
+          <label for="BILLETE">BILLETE</label>
+          <input
+            type="radio"
+            id="PASE"
+            value="PASE"
+            name="Pago"
+            disabled="disabled"
+          />
+          <label for="PASE">PASE</label>
+          <input
+            type="radio"
+            id="DEUDA"
+            value="DEUDA"
+            name="Pago"
+            disabled="disabled"
+          />
+          <label for="DEUDA">DEUDA</label>
+          <input
+            type="radio"
+            id="COMERCIAL"
+            value="COMERCIAL"
+            name="Pago"
+            disabled="disabled"
+          />
+          <label for="COMERCIAL">COMERCIAL</label>
         </fieldset>
 
         <br />
 
         <fieldset id="Pago">
-            <label for="APagar">A Pagar:</label>
-            <input type="number" id="APagar" readonly="readonly">
+          <label for="APagar">A Pagar:</label>
+          <input type="number" id="APagar" readonly="readonly" />
         </fieldset>
 
         <br />
 
         <fieldset id="Extras">
-            <button onclick="APWIP(this)" disabled="disabled">Fondos</button>
-            <button onclick="ShowBarreras()">Barreras</button>
-            <button onclick="APWIP(this)" disabled="disabled">Impresora fiscal</button>
-            <button onclick="APWIP(this)" disabled="disabled">Ultimos eventos</button>
-            <button onclick="APWIP(this)" disabled="disabled">Cobranzas</button>
-            <button onclick="ShowCloseCaja()">Cerrar caja</button>
-            <button onclick="APWIP(this)" disabled="disabled">Buscar tickets</button>
-            <button onclick="APWIP(this)" disabled="disabled">Buscar abonos</button>
-            <button onclick="ShowTicketEntrada()">Ticket de entrada</button>
-            <button onclick="APWIP(this)" disabled="disabled">Auditoria de caja</button>
-            <button onclick="ShowVarios()">Varios</button>
+          <button onclick="APWIP(this)" disabled="disabled">Fondos</button>
+          <button onclick="ShowBarreras()">Barreras</button>
+          <button onclick="APWIP(this)" disabled="disabled">
+            Impresora fiscal
+          </button>
+          <button onclick="APWIP(this)" disabled="disabled">
+            Ultimos eventos
+          </button>
+          <button onclick="APWIP(this)" disabled="disabled">Cobranzas</button>
+          <button onclick="ShowCloseCaja()">Cerrar caja</button>
+          <button onclick="APWIP(this)" disabled="disabled">
+            Buscar tickets
+          </button>
+          <button onclick="APWIP(this)" disabled="disabled">
+            Buscar abonos
+          </button>
+          <button onclick="ShowTicketEntrada()">Ticket de entrada</button>
+          <button onclick="APWIP(this)" disabled="disabled">
+            Auditoria de caja
+          </button>
+          <button onclick="ShowVarios()">Varios</button>
         </fieldset>
+      </section>
 
-    </section>
+      <iframe id="PDFtoPrint" style="display: none"></iframe>
 
+      <div id="MenuClassic" style="display: none"></div>
 
+      <div id="fullMenu" class="menuL2">
+        <img src="/Images/loading_transparent.gif" />
+      </div>
 
-        <iframe id="PDFtoPrint" style="display: none"></iframe>
-
-        <div id="MenuClassic" style="display: none;"></div>
-
-        <div id="fullMenu" class="menuL2">
-            <img src="/Images/loading_transparent.gif" />
-        </div>
-
-        <input name="ctl00$appMenu2" type="hidden" id="appMenu2" value="/Menu.aspx?SID=867" />
-        <input name="ctl00$helpID" type="hidden" id="helpID" value="e/2PACX-1vRTu9mJ_bdeqVNqkxpowb_tYRzwu_Q-erlQTWwUiKMQQMQAZUD40hRE-ZAWpszS9UFXwwnnjZ2qDpqK" />
-        <input name="ctl00$pantID" type="hidden" id="pantID" />
-        <input name="ctl00$tabID" type="hidden" id="tabID" value="08b8bbbf-c977-4528-8407-7c036033e400" />
-
+      <input
+        name="ctl00$appMenu2"
+        type="hidden"
+        id="appMenu2"
+        value="/Menu.aspx?SID=867"
+      />
+      <input
+        name="ctl00$helpID"
+        type="hidden"
+        id="helpID"
+        value="e/2PACX-1vRTu9mJ_bdeqVNqkxpowb_tYRzwu_Q-erlQTWwUiKMQQMQAZUD40hRE-ZAWpszS9UFXwwnnjZ2qDpqK"
+      />
+      <input name="ctl00$pantID" type="hidden" id="pantID" />
+      <input
+        name="ctl00$tabID"
+        type="hidden"
+        id="tabID"
+        value="08b8bbbf-c977-4528-8407-7c036033e400"
+      />
     </section>
 
     <section id="PrintSection">
-        <h1>Servicio Premium</h1>
-        <br />
-        <p>Haganos llegar su diseño en HTML+CSS de lo que le gustaría imprimir por default en esta pantalla y le enviaremos un presupuesto para incorporarlo.</p>
-        <br />
-        <p>Puede usar cualquier dato del registro en el que se encuentra</p>
-        <br />
-        <p>Impresiones listas en milisegundos.</p>
-        <br />
-        <ul>
-            <li>Facturas</li>
-            <li>Publicidad</li>
-            <li>Promociones</li>
-            <li>Fotos de productos</li>
-            <li>Printed Souvenirs</li>
-            <li>Cupones</li>
-            <li>QRs</li>
-            <li>...</li>
-        </ul>
-        <br />
-        <p>Su imaginación es el límite...</p>
-        <br />
-        <a href="https://addsa.com.ar" target="ADD">https://addsa.com.ar</a>
-        <br />
-        <a href="mailto:info@addsa.com.ar">info@addsa.com.ar</a>
-        <br />
+      <h1>Servicio Premium</h1>
+      <br />
+      <p>
+        Haganos llegar su diseño en HTML+CSS de lo que le gustaría imprimir por
+        default en esta pantalla y le enviaremos un presupuesto para
+        incorporarlo.
+      </p>
+      <br />
+      <p>Puede usar cualquier dato del registro en el que se encuentra</p>
+      <br />
+      <p>Impresiones listas en milisegundos.</p>
+      <br />
+      <ul>
+        <li>Facturas</li>
+        <li>Publicidad</li>
+        <li>Promociones</li>
+        <li>Fotos de productos</li>
+        <li>Printed Souvenirs</li>
+        <li>Cupones</li>
+        <li>QRs</li>
+        <li>...</li>
+      </ul>
+      <br />
+      <p>Su imaginación es el límite...</p>
+      <br />
+      <a href="https://addsa.com.ar" target="ADD">https://addsa.com.ar</a>
+      <br />
+      <a href="mailto:info@addsa.com.ar">info@addsa.com.ar</a>
+      <br />
     </section>
-
-</body>
+  </body>
 </html>

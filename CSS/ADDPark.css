@@ -35,22 +35,23 @@ fieldset {
   text-align: center;
 }
 
-#Brand {
+#Provisory {
   text-align: right;
   padding-right: 20px;
   margin-bottom: -15px;
 }
 
-#Brand h1 {
-  text-align: inherit;
+#Provisory h1 {
+  text-align: left;
   background-color: inherit;
 }
 
-#Brand h2 {
+#Provisory h2 {
+  text-align: left;
   background-color: inherit;
 }
 
-#Brand a {
+#Provisory a {
     text-decoration: none;
     font-weight: 600;
   font-size: 1rem;
