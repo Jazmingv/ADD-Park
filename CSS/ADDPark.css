@@ -1,0 +1,387 @@
+@import url("https://fonts.googleapis.com/css2?family=Palanquin:wght@500;600;700&family=Varela&display=swap");
+
+/* font-family: 'Palanquin', sans-serif;
+font-family: 'Varela', sans-serif; */
+
+:root {
+  --eerie-black: #212121;
+  --davys-grey: #575757;
+  --battleship-grey: #898989;
+  --light-grey: #cccccc;
+  --cultured: #f9f9f9;
+  --prussian-blue: #1e3048;
+  --international-orange-aerospace: #fe5d26;
+  --persian-green: #2A9D8F;
+}
+
+body {
+  background-color: var(--cultured);
+  color: var(--eerie-black);
+  font-family: "Varela", sans-serif;
+  font-size: 1.2rem;
+  line-height: 1.5;
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+fieldset {
+  /* border: none;
+  border-radius: 20px; */
+  /* box-shadow: 20px 20px 20px rgba(0, 0, 0, 0.025); */
+}
+
+#FormSection {
+  text-align: center;
+}
+
+#Brand {
+  text-align: right;
+  padding-right: 20px;
+  margin-bottom: -15px;
+}
+
+#Brand h1 {
+  text-align: inherit;
+  background-color: inherit;
+}
+
+#Brand h2 {
+  background-color: inherit;
+}
+
+#Brand a {
+    text-decoration: none;
+    font-weight: 600;
+  font-size: 1rem;
+  color: var(--persian-green);
+}
+
+#Cobro {
+  padding: 10px;
+  height: 90vh;
+  display: grid;
+  grid-template-columns: 1fr 3fr 2fr;
+  grid-template-rows: 1fr 1fr 6fr 1fr 2fr;
+  grid-template-areas:
+    "Operacion Operacion Fiscal"
+    "Tarifa Tarifa Fiscal"
+    "Medio TicketInfo Pago"
+    "Medio TicketInfo Pago"
+    "Extras Extras Extras";
+  grid-gap: 2rem;
+  align-items: center;
+}
+
+#Operacion {
+  grid-area: Operacion;
+  background-color: var(--cultured);
+  border: none;
+  border-radius: 20px;
+  box-shadow: 10px 10px 20px rgba(0, 0, 0, 0.1);
+}
+
+#Tarifa {
+  grid-area: Tarifa;
+  padding-top: 5%;
+  border: none;
+}
+
+#Medio {
+  grid-area: Medio;
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  padding: 5px;
+}
+
+#TicketInfo {
+  grid-area: TicketInfo;
+}
+
+#Fiscal {
+  grid-area: Fiscal;
+}
+
+#Extras button {
+  max-width: 100px;
+}
+
+#Extras button::before {
+  display: inline-block;
+  content: " ";
+  background-repeat: no-repeat;
+  background-size: 25px 35px;
+  height: 25px;
+  width: 25px;
+  margin-right: 12px;
+}
+
+/* #N104 ~ label::before {
+  background-image: url("../images/UI/normal-auto.svg");
+}
+
+#N204 ~ label::before {
+  background-image: url("../images/UI/camioneta.svg");
+}
+
+#N304 ~ label::before {
+  background-image: url("../images/UI/motocicleta.svg");
+}
+
+#N404 ~ label::before {
+  background-image: url("../images/UI/bicicleta.svg");
+} */
+
+#Cobro label {
+  text-align: left;
+  display: block;
+  margin: 5px 5px 0px 2px;
+}
+
+#Cobro input[type="radio"] + label {
+  display: inline-block;
+  font-weight: 600;
+  color: var(--cultured);
+  background-color: var(--battleship-grey);
+}
+
+#Cobro input {
+  display: block;
+}
+
+#Cobro input[type="radio"] {
+  display: inline-block;
+  width: 15px;
+}
+
+#Cobro fieldset {
+  vertical-align: top;
+  margin-top: 10px;
+  padding: 5px 10px 1px 10px;
+  border: none;
+}
+
+#Cobro .RadioAsButtons input[type="radio"] {
+  display: none;
+}
+
+#Cobro .RadioAsButtons label,
+#Extras button {
+  display: inline-block;
+  text-align: center;
+  border-radius: 10px;
+  padding: 5px 5px;
+  cursor: pointer;
+  border: none;
+  margin: 1px 1px 5px 1px;
+  font-weight: 600;
+  color: var(--cultured);
+  background-color: var(--battleship-grey);
+}
+
+#Cobro .RadioAsButtons input[type="radio"]:checked + label {
+  color: var(--cultured);
+  background-color: var(--international-orange-aerospace);
+  font-weight: 600;
+}
+
+#Cobro .RadioAsButtons input[type="radio"]:disabled + label,
+#Extras button:disabled {
+  border: 2px solid var(--light-grey);
+  color: var(--light-grey);
+  background-color: var(--cultured);
+  font-weight: 600;
+  cursor: not-allowed;
+}
+
+#TicketInfo div {
+  vertical-align: top;
+  display: inline-block;
+  margin: 10px;
+}
+
+#TicketInfo input[type="number"] {
+  font-size: xx-large;
+}
+
+#Ticket {
+  font-size: x-large;
+  width: 150px;
+}
+
+#Permanencia {
+  font-size: x-large;
+  width: 160px;
+}
+
+#Importe {
+  width: 150px;
+}
+
+#Cliente {
+  font-size: x-large;
+}
+
+#APagar {
+  width: 100%;
+  font-size: 6rem;
+  background-color: var(--cultured);
+  margin-top: 25px;
+  border: none;
+  border-radius: 20px;
+  box-shadow: 10px 10px 20px rgba(0, 0, 0, 0.1);
+}
+
+#Fiscal input[type="radio"] + label {
+  display: inline-block;
+  font-weight: 600;
+  color: var(--battleship-grey);
+  background-color: var(--cultured);
+}
+/* 
+#Varios {
+  width: 250px;
+  border: 1px solid black;
+  display: block;
+  margin: auto;
+  margin-top: 40px;
+  padding: 25px;
+  background-color: var(--Highlight);
+  box-shadow: 7px 7px 5px 0px rgb(0 0 0 / 50%);
+}
+
+#Varios button {
+  display: block;
+  margin: 10px auto;
+  font-size: large;
+}
+
+#PopUps {
+  margin: auto;
+  position: fixed;
+  top: 20%;
+  left: 20%;
+  padding: 15px;
+  border: 1px solid black;
+  background-color: var(--Highlight);
+  box-shadow: 7px 7px 5px 0px rgb(0 0 0 / 50%);
+  text-align: left;
+  z-index: 1100;
+}
+
+#PopUps fieldset {
+  border: none;
+}
+
+#PopUps label {
+  text-align: left;
+  display: block;
+  margin-top: 10px;
+}
+
+#PopUps input {
+  font-size: large;
+  display: block;
+  margin-bottom: 10px;
+}
+
+#PopUps input[type="radio"] + label {
+  display: inline-block;
+}
+
+#PopUps input[type="radio"] {
+  display: inline-block;
+  width: 15px;
+}
+
+#PopUpClose {
+  float: right;
+  background-color: red;
+  border: none;
+  box-shadow: 3px 3px 3px 0px rgb(0 0 0 / 50%);
+}
+
+#PopUpClose:active {
+  box-shadow: none;
+}
+
+#PopUpConfirm {
+  margin-bottom: 5px;
+  float: right;
+} */
+
+#Operacion,
+#Tarifa {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  flex-direction: row;
+}
+
+#Extras {
+  border-top: 3px solid var(--light-grey) !important;
+  padding-top: 15px !important;
+  grid-area: Extras;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  flex-direction: row;
+}
+
+#Pago {
+  grid-area: Pago;
+  margin-left: -10px;
+  padding-left: 20px !important;
+  border-left: 3px solid var(--light-grey) !important;
+  height: 97%;
+}
+
+#Cobro .RadioAsButtons input[type="radio"] + label {
+  flex: 1;
+  margin: 5px;
+}
+
+/* MEDIA QUERIES */
+
+@media (max-width: 1200px) {
+  #Cobro {
+    display: grid;
+    grid-template-columns: 1fr 3fr;
+    grid-template-rows: 1fr 1fr 6fr 2fr 1fr 2fr;
+    grid-template-areas:
+      "Operacion Operacion"
+      "Tarifa Tarifa"
+      "Medio TicketInfo"
+      "Fiscal Fiscal"
+      "Pago Pago"
+      "Extras Extras";
+    grid-gap: 1rem;
+  }
+  #Pago {
+    margin-left: 0 !important;
+    padding: 7px !important;
+    border-left: none !important;
+  }
+}
+
+@media (max-width: 824px) {
+  #Cobro {
+    display: block;
+  }
+  body {
+    font-size: 1rem;
+    line-height: 1.5;
+  }
+  #Cobro .RadioAsButtons label,
+  #Extras button {
+    text-align: center;
+    height: 100%;
+  }
+  #Pago {
+    grid-area: Pago;
+    height: 30%;
+  }
+}
