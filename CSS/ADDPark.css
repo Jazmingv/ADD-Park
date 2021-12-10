@@ -48,10 +48,10 @@ body {
 
 #Cobro {
   padding: 10px;
-  height: 90vh;
+  height: 100%;
   display: grid;
   grid-template-columns: 1fr 3fr 2fr;
-  grid-template-rows: 1fr 1fr 6fr 1fr 2fr;
+  grid-template-rows: 1fr 1fr 3fr 1fr 2fr;
   grid-template-areas:
     "Operacion Operacion Fiscal"
     "Tarifa Tarifa Fiscal"
@@ -148,7 +148,6 @@ body {
 }
 
 #Cobro input[type="radio"] + label {
-  display: inline-block;
   font-weight: 600;
   color: var(--cultured);
   background-color: var(--battleship-grey);
@@ -183,7 +182,6 @@ body {
 
 #Cobro .RadioAsButtons label,
 #Extras button {
-  display: inline-block;
   text-align: center;
   border-radius: 10px;
   padding: 5px 5px;
@@ -305,7 +303,6 @@ textarea:disabled {
 
 #Cobro .RadioAsButtons input[type="radio"] + label {
   flex: 1;
-  margin: 5px;
 }
 
 #Varios {
@@ -425,7 +422,7 @@ textarea:disabled {
   #Cobro {
     display: grid;
     grid-template-columns: 1fr 3fr;
-    grid-template-rows: 1fr 1fr 6fr 2fr 1fr 2fr;
+    grid-template-rows: 10% 10% 30% 20% 20% 20%;
     grid-template-areas:
       "Operacion Operacion"
       "Tarifa Tarifa"
@@ -442,6 +439,9 @@ textarea:disabled {
   }
   #PopUps {
     width: 70vw;
+  }
+  #Cobro .RadioAsButtons input[type="radio"] + label {
+    flex: none;
   }
 }
 
