@@ -47,7 +47,7 @@ body {
 #Cobro {
   padding: 10px;
   height: 90vh;
-  display: grid !important;
+  display: grid;
   grid-template-columns: 1fr 3fr 2fr;
   grid-template-rows: 1fr 1fr 6fr 1fr 2fr;
   grid-template-areas:
